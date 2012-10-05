@@ -1,0 +1,125 @@
+section players
+{
+	#current choices are:
+	
+	#human
+	#AI
+	
+	player_one human
+	player_two human
+	
+	#current options
+	#alphaBeta
+	#random
+	
+	ai_one random
+	ai_two alphabeta
+}
+
+section log
+{
+
+#Log Levels are as follows:
+# 0 - Debug and up
+# 1 - Info and up
+# 2 - Error and up
+# 3 - Fatal and up
+# 4 - Special and up
+default_level 0
+}
+
+section window
+{
+	title Isolation
+	
+	bg_red 0.0
+	bg_green 0.0
+	bg_blue 0.0
+	bg_alpha 1.0
+	
+	width 800
+	height 800
+}
+
+section game
+{
+	#Use five for testing
+	cube_dimension 5
+	#use 3.0 for testing
+	cube_size 3.0
+	
+	rock_move yes
+	horizontal_queen_move no
+	vertical_queen_move no
+	
+	shadow_line no
+	
+	starting_player 1
+	
+	simulating no
+	sim_count 100
+}	
+	
+section colours
+{
+
+	#Player One's Colour values
+	playerOne_R 0.05
+	playerOne_G 0.9
+	playerOne_B 0.1
+	playerOne_A 1.0
+	
+	#Player Two's Colour values
+	playerTwo_R 0.1
+	playerTwo_G 0.1
+	playerTwo_B 0.85
+	playerTwo_A 1.0
+	
+	#The Cubes Colour
+	cube_R 1.0
+	cube_G 1.0
+	cube_B 1.0
+	cube_A 1.0
+	
+	#The Shadow's Colour
+	shadow_R 0.45
+	shadow_G 0.15
+	shadow_B 0.65
+	shadow_A 0.15
+	
+	#The Trace Colour
+	trace_R 1.0
+	trace_G 1.0
+	trace_B 0.0
+	trace_A 0.5
+	
+	#The Highlight Colour
+	highlight_R 1.0
+	highlight_G 0.0
+	highlight_B 0.0
+	highlight_A 1.0
+}
+
+section camera
+{
+	position_x 0.0
+	position_y 10.0
+	position_z -30
+	
+	focus_x 0.0
+	focus_y 0.0
+	focus_z 1.0
+	
+	up_x 0.0
+	up_y 1.0
+	up_z 0.0
+	
+	rotate_speed 0.65
+
+	invert_y no
+}
+
+section die_options
+{
+	print_stack_trace yes
+}

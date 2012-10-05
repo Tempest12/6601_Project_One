@@ -1,0 +1,27 @@
+section log
+{
+
+#Log Levels are as follows:
+# 0 - Debug and up
+# 1 - Info and up
+# 2 - Error and up
+# 3 - Fatal and up
+# 4 - Special and up
+default_level 0
+}
+
+section window
+{
+	width 300
+	height 300
+}
+
+section mesh
+{
+	wireframe false
+}
+
+section directX
+{
+	shader_path .\shaders
+}
