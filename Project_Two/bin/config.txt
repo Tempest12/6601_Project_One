@@ -6,14 +6,20 @@ section players
 	#AI
 	
 	player_one human
-	player_two human
-	
+	player_two ai
+}
+
+section ai
+{
 	#current options
-	#alphaBeta
+	#alpha_beta
 	#random
 	
-	ai_one random
-	ai_two alphabeta
+	player_one random
+	player_two alpha_beta
+	
+	alphabeta_eval_one stayAlive
+	alphabeta_eval_two stayAlive
 }
 
 section log
@@ -44,7 +50,7 @@ section window
 section game
 {
 	#Use five for testing
-	cube_dimension 5
+	cube_dimension 2
 	#use 3.0 for testing
 	cube_size 3.0
 	

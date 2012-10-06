@@ -75,7 +75,7 @@ namespace Restart
                 return possibleMoves;
             }
 
-            Log.writeDebug("The move sent to get possible moves is: " + currentPosition.ToString()); 
+            //Log.writeDebug("The move sent to get possible moves is: " + currentPosition.ToString()); 
 
             if (Config.convertSettingToBool("game", "rock_move"))
             {
@@ -159,7 +159,7 @@ namespace Restart
                     }
                 }
 
-                if (possibleMoves.Count < 25)
+                /*if (possibleMoves.Count < 25)
                 {
                     Log.writeDebug("The possible moves are:");
 
@@ -167,7 +167,7 @@ namespace Restart
                     {
                         Log.writeDebug("    " + move.ToString());
                     }
-                }
+                }*/
             }
             if(Config.convertSettingToBool("game", "horizontal_queen_move"))
             {

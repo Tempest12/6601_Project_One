@@ -278,6 +278,8 @@ namespace Restart
         {
             base.OnRenderFrame(e);
 
+            
+
             Core.update();
 
             //GL.LoadIdentity();
@@ -290,16 +292,6 @@ namespace Restart
 
             camera.applyRotation();
             Core.drawCube.draw();
-
-            /*GL.Begin(BeginMode.Triangles);
-            {
-                GL.Color3(1.0f, 1.0f, 1.0f);
-                
-                GL.Vertex3(-1.0f, -1.0f, 4.0f);
-                GL.Vertex3(1.0f, -1.0f, 4.0f);
-                GL.Vertex3(0.0f, 1.0f, 4.0f);
-            }
-            GL.End();*/
 
             this.SwapBuffers();
             //GL.Finish();

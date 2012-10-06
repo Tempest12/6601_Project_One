@@ -18,8 +18,6 @@ namespace Restart
         public Player AIPlayer;
         public Player opponent;
 
-        public MINMAXTYPE minOrMax;
-
         //public static delegate evaluateOne;
         //public static delegate evaluateTwo;
 
@@ -40,8 +38,6 @@ namespace Restart
                     }
                 }
             }
-
-            this.minOrMax = minOrMax;
 
             this.ourMove = ourMove;
             this.generatorMove = move;
@@ -129,11 +125,5 @@ namespace Restart
                 return opponent.possibleMoves.Count == 0;
             }
         }
-    }
-
-    public enum MINMAXTYPE
-    {
-        MAX = 0,
-        MIN,
     }
 }

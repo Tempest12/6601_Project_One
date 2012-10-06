@@ -51,9 +51,13 @@ namespace Restart
         {
             Console.WriteLine(message);
 
+            Log.writeFatal(message);
+
             if(Config.convertSettingToBool("die_options", "print_stack_trace"))
             {
                 Console.WriteLine(new System.Diagnostics.StackTrace());
+                //Log.writeFatal("Stack Trace:");
+                //Log.writeFatal(new System.Diagnostics.StackTrace());
             }
             
             Core.uninit();

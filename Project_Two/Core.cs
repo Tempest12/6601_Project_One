@@ -34,6 +34,15 @@ namespace Restart
 
         public static int run_code;
 
+        public static Random numberGenerator;
+
+        public static bool simulating;
+        public static int simCount;
+        public static int simCountMax;
+
+        public static int playerOneVictories = 0;
+        public static int playerTwoVictories = 0;
+
         //sprivate static Color4 clearColour;
 
         //Used to draw spheres... Not sure why it's needed...
@@ -53,8 +62,8 @@ namespace Restart
             Cube.init();
             drawCube = new Cube();
 
-            playerOne = new Player(1, PlayerType.HUMAN);
-            playerTwo = new Player(2, PlayerType.HUMAN);
+            playerOne = new Player(1, getPlayerType(1));
+            playerTwo = new Player(2, getPlayerType(2));
             switch (Config.convertSettingToInt("game", "starting_player"))
             {
                 case 1:
@@ -66,7 +75,11 @@ namespace Restart
                     break;
             }
 
-            
+            numberGenerator = new Random();
+
+            simulating = Config.convertSettingToBool("game", "simulating");
+            simCount = 0;
+            simCountMax = Config.convertSettingToInt("game", "sim_count");
         }
 
         /**
@@ -77,52 +90,153 @@ namespace Restart
             window = new RenderWindow();
         }
 
+        public static PlayerType getPlayerType(int playerNumber)
+        {
+            switch (playerNumber)
+            {
+                case 1:
+                    if (Config.getValue("players", "player_one") == "human")
+                    {
+                        return PlayerType.HUMAN;
+                    }
+                    else if(Config.getValue("players", "player_one") == "ai")
+                    {
+                        return PlayerType.AI;
+                    }
+                    else
+                    {
+                        MainMethod.die("Error : Core.getPlayerType : player type: \"" + Config.getValue("players", "player_one") + "\" is not supported. Typo?");
+                    }
+                    break;
+
+                case 2:
+                    if (Config.getValue("players", "player_two") == "human")
+                    {
+                        return PlayerType.HUMAN;
+                    }
+                    else if(Config.getValue("players", "player_two") == "ai")
+                    {
+                        return PlayerType.AI;
+                    }
+                    else
+                    {
+                        MainMethod.die("Error : Core.getPlayerType : player type: \"" + Config.getValue("players", "player_two") + "\" is not supported. Typo?");
+                    }
+                    break;
+            }
+
+            //should never reach here but:
+            return PlayerType.HUMAN;
+        }
+
         public static void restartGame()
         {
+            drawCube = new Cube();
+
+            playerOne.currentPosition = null;
+            playerTwo.currentPosition = null;
+
+            switch (Config.convertSettingToInt("game", "starting_player"))
+            {
+                case 1:
+                    currentPlayer = playerOne;
+                    break;
+
+                case 2:
+                    currentPlayer = playerTwo;
+                    break;
+            }
+
+            currentPlayer.getNewMoves(drawCube.cube);
 
         }
 
+        public static bool done = false;
+
         public static void switchPlayers()
         {
+            if (done)
+            {
+                return;
+            }
+
+
             if(currentPlayer.Equals(playerOne))
             {
                 currentPlayer = playerTwo;
                 playerTwo.getNewMoves(drawCube.cube);
+                playerOne.getNewMoves(drawCube.cube);
                 if (playerTwo.possibleMoves.Count == 0)
                 {
                     endGame(playerOne.playerNumber);
                 }
-            }
-            else if(currentPlayer.Equals(playerTwo))
-            {
-                currentPlayer = playerOne;
-                playerOne.getNewMoves(drawCube.cube);
-                if (playerOne.possibleMoves.Count == 0)
+                else if (playerOne.possibleMoves.Count == 0)
                 {
                     endGame(playerTwo.playerNumber);
                 }
             }
-
-            Console.WriteLine("");
+            else if (currentPlayer.Equals(playerTwo))
+            {
+                currentPlayer = playerOne;
+                playerOne.getNewMoves(drawCube.cube);
+                playerTwo.getNewMoves(drawCube.cube);
+                if (playerOne.possibleMoves.Count == 0)
+                {
+                    endGame(playerTwo.playerNumber);
+                }
+                else if (playerTwo.possibleMoves.Count == 0)
+                {
+                    endGame(playerOne.playerNumber);
+                }
+            }
         }
 
         public static void endGame(int winningPlayerNumber)
         {
-            DialogResult result = MessageBox.Show("Player " + winningPlayerNumber, "Game Over", MessageBoxButtons.YesNo);
-
-            switch (result)
+            if (simulating)
             {
-                case DialogResult.Yes:
+                Log.writeInfo("Game has ended Player: " + winningPlayerNumber + " has won.");
+                switch (winningPlayerNumber)
+                {
+                    case 1:
+                        playerOneVictories++;
+                        break;
 
+                    case 2:
+                        playerTwoVictories++;
+                        break;
+                }
+
+                simCount++;
+                if (simCount < simCountMax)
+                {
                     restartGame();
-
-                    break;
-
-                case DialogResult.No:
-
+                }
+                else
+                {
+                    Log.writeInfo("Final Results:");
+                    Log.writeInfo("Player One: " + playerOneVictories + " victories.");
+                    Log.writeInfo("Player Two: " + playerTwoVictories + " victories.");
                     uninit();
+                }
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Player " + winningPlayerNumber + " has won!. Would you like to play another game?", "Game Over", MessageBoxButtons.YesNo);
 
-                    break;
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                        restartGame();
+
+                        break;
+
+                    case DialogResult.No:
+
+                        uninit();
+
+                        break;
+                }
             }
         }
 
@@ -154,8 +268,11 @@ namespace Restart
          */
         public static void update()
         {
-            //Console.WriteLine("Update");
-            //window.camera.applyRotation();
+            if (currentPlayer.type == PlayerType.AI)
+            {
+                currentPlayer.makeMove();
+                switchPlayers();
+            }
         }
         /**
          * Uninitializes my OpenGL Stuff

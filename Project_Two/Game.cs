@@ -21,6 +21,7 @@ namespace Restart
                 beta = beta_in;
             }
 
+
             /* player playing this node */
             public Player player { get; set; }
             
