@@ -18,6 +18,9 @@ section ai
 	player_one alpha_beta
 	player_two alpha_beta
 	
+	player_one_depth 5
+	player_two_depth 15
+	
 	alphabeta_eval_one stayAlive
 	alphabeta_eval_two stayAlive
 }
@@ -50,7 +53,7 @@ section window
 section game
 {
 	#Use five for testing
-	cube_dimension 1
+	cube_dimension 5
 	#use 3.0 for testing
 	cube_size 3.0
 	
@@ -60,10 +63,10 @@ section game
 	
 	shadow_line no
 	
-	starting_player 5
+	starting_player 1
 	
 	simulating yes
-	sim_count 10
+	sim_count 100
 }	
 	
 section colours

@@ -91,8 +91,23 @@ namespace Restart
             }
             else
             {
-                return AlphaBeta.maxNextMove(currentState, 7);
+                switch(playerNumber)
+                {
+                    case 1:
+                        return AlphaBeta.maxNextMove(currentState, Config.convertSettingToInt("ai", "player_one_depth"));
+                        break;
+
+                    case 2:
+                        return AlphaBeta.maxNextMove(currentState, Config.convertSettingToInt("ai", "player_two_depth"));
+                        break;
+
+                    default:
+                        MainMethod.die("Player.alphaBeta : player number is not 1 or 2. It is: " + playerNumber);
+                        break;
+                }
             }
+
+            return null;
         }
 
         public void makeMove(State currentState)
@@ -109,7 +124,7 @@ namespace Restart
                 return;
             }
 
-            Log.writeSpecial("Move sent back by AI is: " + move.ToString());
+            //Log.writeSpecial("Move sent back by AI is: " + move.ToString());
 
             Core.drawCube.cube[move.row, move.col, move.distance] = (byte)playerNumber;
             Move.addShadows(Core.drawCube.cube, currentPosition, move);

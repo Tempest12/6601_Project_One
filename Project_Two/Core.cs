@@ -75,6 +75,10 @@ namespace Restart
                 case 2:
                     currentPlayer = playerTwo;
                     break;
+
+                default:
+                    MainMethod.die("Core.init : The starting player must either be 1 or 2, not: " + Config.convertSettingToInt("game", "starting_player"));
+                    break;
             }
 
             numberGenerator = new Random();
