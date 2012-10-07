@@ -124,6 +124,10 @@ namespace Restart
          * ----------------------------------------------------------------------------
          */
 
+        /* Used to check if AB ever reached the height given.
+         * This is used to avoid executing ID more than needed */
+        public static bool height_reached = true;
+
         /* Var to keep track of timer expiration */
         public static bool timerOn;
 
@@ -135,8 +139,8 @@ namespace Restart
             /* reset timerOn variable */
             timerOn = true;
 
-            /* # plys changes on every iteration */
-            int plys = 1;
+            /* # height changes by 2 on every iteration */
+            int height = 2;
 
             /* Timer that expires when the specified number of seconds is passed */
             System.Timers.Timer timer = new System.Timers.Timer();
@@ -151,18 +155,25 @@ namespace Restart
                                                 int.MaxValue,
                                                 true);
 
-            /* Loop executes until timer expires */
-            while (timerOn)
-            {
-                /* calculate next best move given new depth */
-                alphabetaID(max_init, plys);
 
-                /* increase plys level */
-                plys++;
+            /* Loop executes until timer expires */
+            while (timerOn && height_reached)
+            {
+                /* keep track of AB reaching the allowed height */
+                height_reached = false;
+
+                /* calculate next best move given new depth */
+                alphabetaID(max_init, height);
+
+                /* increase plys level - plys = height/2 */
+                height += 2;
             }
 
             /* turn timer off */
             timer.Enabled = false;
+
+            /* reset height */
+            height_reached = true;
 
             /* this line will break of there was not enough time to find a state,
              * which should not happen given the speed of AI
@@ -191,10 +202,16 @@ namespace Restart
             if (!timerOn)
                 return 0;
 
+            if (curr_node.state.isTerminal())
+            {
+                return curr_node.state.value;
+            }
+
             /* base case - check if we have reached desired depth or if
              * current node.state is a terminal state */
-            if ((height <= 0 && curr_node.state.isMax()) || (curr_node.state.isTerminal()))
+            if (height <= 0 && curr_node.state.isMax())
             {
+                height_reached = true;
                 return curr_node.state.value;
             }
 
