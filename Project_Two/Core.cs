@@ -197,6 +197,7 @@ namespace Restart
         {
             if (simulating)
             {
+                Console.WriteLine("Game has ended Player: " + winningPlayerNumber + " has won.");
                 Log.writeInfo("Game has ended Player: " + winningPlayerNumber + " has won.");
                 switch (winningPlayerNumber)
                 {

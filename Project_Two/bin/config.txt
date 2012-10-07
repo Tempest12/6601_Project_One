@@ -5,7 +5,7 @@ section players
 	#human
 	#AI
 	
-	player_one human
+	player_one ai
 	player_two ai
 }
 
@@ -15,7 +15,7 @@ section ai
 	#alpha_beta
 	#random
 	
-	player_one random
+	player_one alpha_beta
 	player_two alpha_beta
 	
 	alphabeta_eval_one stayAlive
@@ -50,7 +50,7 @@ section window
 section game
 {
 	#Use five for testing
-	cube_dimension 5
+	cube_dimension 1
 	#use 3.0 for testing
 	cube_size 3.0
 	
@@ -60,7 +60,7 @@ section game
 	
 	shadow_line no
 	
-	starting_player 1
+	starting_player 5
 	
 	simulating yes
 	sim_count 10

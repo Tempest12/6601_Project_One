@@ -91,7 +91,7 @@ namespace Restart
             }
             else
             {
-                return AlphaBeta.maxNextMove(currentState, 10);
+                return AlphaBeta.maxNextMove(currentState, 7);
             }
         }
 

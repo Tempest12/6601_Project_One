@@ -60,7 +60,7 @@ namespace Restart
                     int child_alpha = alphabeta(min_node, height - 1);
 
                     /* set new alpha value for this node */
-                    if (curr_node.alpha < child_alpha)
+                    if (curr_node.alpha <= child_alpha)
                     {
                         curr_node.alpha = child_alpha;
                         /* only update best move if we are root node */
