@@ -21,6 +21,9 @@ section ai
 	player_one_depth 5
 	player_two_depth 15
 	
+	player_one_time 7.0
+	player_two_time 7.0
+	
 	alphabeta_eval_one stayAlive
 	alphabeta_eval_two stayAlive
 }

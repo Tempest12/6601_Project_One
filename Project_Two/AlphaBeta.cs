@@ -130,7 +130,7 @@ namespace Restart
         /*
          * Iterative deepening of AlphaBeta
          */
-        public static Move maxNextMoveID(State currState, int timeout)
+        public static Move maxNextMoveID(State currState, float timeout)
         {
             /* reset timerOn variable */
             timerOn = true;
