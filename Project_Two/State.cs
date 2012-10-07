@@ -48,18 +48,17 @@ namespace Restart
                 {
                     Move.fakeMove(this.gameBoard, this.opponent, move);
                 } 
-                this.AIPlayer.getNewMoves(gameBoard);
-                this.opponent.getNewMoves(gameBoard);
+                this.AIPlayer.getNewMoves(this.gameBoard);
+                this.opponent.getNewMoves(this.gameBoard);
             }
             else
             {
                 if (move != null)
                 {
-                    Move.fakeMove(this.gameBoard, this.opponent, move);
+                    Move.fakeMove(this.gameBoard, this.AIPlayer, move);
                 } 
-                Move.fakeMove(this.gameBoard, this.AIPlayer, move);
-                this.opponent.getNewMoves(gameBoard);
-                this.AIPlayer.getNewMoves(gameBoard);
+                this.opponent.getNewMoves(this.gameBoard);
+                this.AIPlayer.getNewMoves(this.gameBoard);
             }
 
             value = this.evaluate();

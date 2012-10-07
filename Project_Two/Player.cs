@@ -76,7 +76,7 @@ namespace Restart
         {
             if (possibleMoves.Count == 0)
             {
-                //MainMethod.die(" Error : Player.pickRandomMove : the number of possible moves was zero. The game should have ended before this.");               
+                MainMethod.die(" Error : Player.pickRandomMove : the number of possible moves was zero. The game should have ended before this.");               
                 return null;
             }
 

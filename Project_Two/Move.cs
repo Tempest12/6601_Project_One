@@ -39,6 +39,10 @@ namespace Restart
                 board[move.row, move.col, move.distance] = (byte)movingPlayer.playerNumber;
                 movingPlayer.currentPosition = move;
             }
+            else if(movingPlayer.currentPosition.Equals(move))
+            {
+                return;
+            }
             else
             {
                 board[move.row, move.col, move.distance] = (byte)movingPlayer.playerNumber;

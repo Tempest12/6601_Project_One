@@ -269,10 +269,20 @@ namespace Restart
          * Updates the current state of the Program
          */
         public static int counter = 0;
+        public static int maxCount = 750;
 
         public static void update()
         {
             counter++;
+
+            if (counter <= maxCount)
+            {
+                return;
+            }
+            else
+            {
+                counter = 0;
+            }
 
             if (currentPlayer.type == PlayerType.AI)
             {

@@ -15,7 +15,7 @@ section ai
 	#alpha_beta
 	#random
 	
-	player_one random
+	player_one alpha_beta
 	player_two alpha_beta
 	
 	alphabeta_eval_one stayAlive
@@ -50,7 +50,7 @@ section window
 section game
 {
 	#Use five for testing
-	cube_dimension 2
+	cube_dimension 3
 	#use 3.0 for testing
 	cube_size 3.0
 	
