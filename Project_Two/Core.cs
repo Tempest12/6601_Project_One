@@ -43,6 +43,8 @@ namespace Restart
         public static int playerOneVictories = 0;
         public static int playerTwoVictories = 0;
 
+        public static State currentState;
+
         //sprivate static Color4 clearColour;
 
         //Used to draw spheres... Not sure why it's needed...
@@ -266,11 +268,22 @@ namespace Restart
         /**
          * Updates the current state of the Program
          */
+        public static int counter = 0;
+
         public static void update()
         {
+            counter++;
+
             if (currentPlayer.type == PlayerType.AI)
             {
-                currentPlayer.makeMove();
+                //Make the current Game State
+                currentState = new State(currentPlayer, Core.getNotCurrentPlayer(), drawCube.cube, Core.getNotCurrentPlayer().currentPosition, true);
+
+                //Pass it on to the Computer
+                currentPlayer.makeMove(currentState);
+
+                //Console.ReadLine();
+
                 switchPlayers();
             }
         }

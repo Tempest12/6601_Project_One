@@ -6,7 +6,7 @@ using System.Text;
 namespace Restart
 {
 
-    delegate Move aiMove();
+    delegate Move aiMove(State currentState);
 
     public class Player
     {
@@ -72,7 +72,7 @@ namespace Restart
             possibleMoves = Move.getPossibleMoves(board, currentPosition);
         }
 
-        private Move pickRandomMove()
+        private Move pickRandomMove(State currentState)
         {
             if (possibleMoves.Count == 0)
             {
@@ -83,19 +83,19 @@ namespace Restart
             return possibleMoves[Core.numberGenerator.Next(possibleMoves.Count)];
         }
 
-        private Move alphaBeta()
+        private Move alphaBeta(State currentState)
         {
-             return AlphaBeta.maxNextMove(RenderWindow.lastState, int.MaxValue);
+             return AlphaBeta.maxNextMove(currentState, int.MaxValue);
         }
 
-        public void makeMove()
+        public void makeMove(State currentState)
         {
             if (type != PlayerType.AI)
             {
                 MainMethod.die("Player.makeMove : makeMove called on a human player.");
             }
 
-            Move move = aiFunc();
+            Move move = aiFunc(currentState);
 
             if (move == null)
             {

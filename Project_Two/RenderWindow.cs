@@ -217,7 +217,7 @@ namespace Restart
 
                     if (Cube.focus)
                     {
-                        lastState = new State(Core.getNotCurrentPlayer(), Core.currentPlayer, Core.drawCube.cube, new Move(Cube.focusRow, Cube.focusCol, Cube.focusDistance), false);
+                        //lastState = new State(Core.getNotCurrentPlayer(), Core.currentPlayer, Core.drawCube.cube, new Move(Cube.focusRow, Cube.focusCol, Cube.focusDistance), false);
                         Log.writeDebug("");
 
                         if (Core.currentPlayer.tryMove(new Move(Cube.focusRow, Cube.focusCol, Cube.focusDistance)))

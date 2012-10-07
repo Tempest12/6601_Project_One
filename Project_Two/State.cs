@@ -44,12 +44,19 @@ namespace Restart
 
             if(ourMove)
             {
-                Move.fakeMove(this.gameBoard, this.opponent, move);
+                if (move != null)
+                {
+                    Move.fakeMove(this.gameBoard, this.opponent, move);
+                } 
                 this.AIPlayer.getNewMoves(gameBoard);
                 this.opponent.getNewMoves(gameBoard);
             }
             else
             {
+                if (move != null)
+                {
+                    Move.fakeMove(this.gameBoard, this.opponent, move);
+                } 
                 Move.fakeMove(this.gameBoard, this.AIPlayer, move);
                 this.opponent.getNewMoves(gameBoard);
                 this.AIPlayer.getNewMoves(gameBoard);

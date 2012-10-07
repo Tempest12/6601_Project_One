@@ -5,7 +5,7 @@ section players
 	#human
 	#AI
 	
-	player_one human
+	player_one ai
 	player_two ai
 }
 
@@ -62,8 +62,8 @@ section game
 	
 	starting_player 1
 	
-	simulating no
-	sim_count 100
+	simulating yes
+	sim_count 5
 }	
 	
 section colours
