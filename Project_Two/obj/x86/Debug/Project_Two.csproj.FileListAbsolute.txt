@@ -30,3 +30,17 @@ C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\bin\Debug\OpenTK.GLC
 C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Project_Two.csprojResolveAssemblyReference.cache
 C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Restart.Properties.Resources.resources
 C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Project_Two.csproj.GenerateResource.Cache
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\bin\Debug\Restart.exe.config
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Interop.DXTRANSLib.dll
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Project_Two.csproj.ResolveComReference.cache
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Restart.exe
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Restart.pdb
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\bin\Debug\Restart.exe
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\bin\Debug\Restart.pdb
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\bin\Debug\OpenTK.Compatibility.dll
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\bin\Debug\OpenTK.dll
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\bin\Debug\OpenTK.GLControl.dll
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Restart.Properties.Resources.resources
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\spikey\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\GenerateResource.write.1.tlog

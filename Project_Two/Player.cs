@@ -85,7 +85,14 @@ namespace Restart
 
         private Move alphaBeta(State currentState)
         {
-             return AlphaBeta.maxNextMove(currentState, 10);
+            if (currentPosition == null)
+            {
+                return pickRandomMove(currentState);
+            }
+            else
+            {
+                return AlphaBeta.maxNextMove(currentState, 10);
+            }
         }
 
         public void makeMove(State currentState)
