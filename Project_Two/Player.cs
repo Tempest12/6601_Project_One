@@ -85,7 +85,7 @@ namespace Restart
 
         private Move alphaBeta(State currentState)
         {
-             return AlphaBeta.maxNextMove(currentState, int.MaxValue);
+             return AlphaBeta.maxNextMove(currentState, 10);
         }
 
         public void makeMove(State currentState)

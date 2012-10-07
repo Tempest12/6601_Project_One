@@ -19,7 +19,8 @@ namespace Restart
             Game.Node max_init = new Game.Node(currState.AIPlayer,
                                                 currState,
                                                 int.MinValue,
-                                                int.MaxValue);
+                                                int.MaxValue,
+                                                true);
             // find next move
             alphabeta(max_init, height);
 
@@ -37,7 +38,7 @@ namespace Restart
         {
             /* base case - check if we have reached desired depth or if
              * current node.state is a terminal state */
-            if ((height == 0) || (curr_node.state.isTerminal()))
+            if ((height <= 0 && curr_node.state.isMax()) || (curr_node.state.isTerminal()))
             {
                 return curr_node.state.value;
             }
@@ -53,7 +54,8 @@ namespace Restart
                     min_node = new Game.Node( curr_node.state.opponent,
                                                         child_state,
                                                         curr_node.alpha,
-                                                        curr_node.beta);
+                                                        curr_node.beta,
+                                                        false);
                     /* get child's alpha value */
                     int child_alpha = alphabeta(min_node, height - 1);
 
@@ -61,7 +63,11 @@ namespace Restart
                     if (curr_node.alpha < child_alpha)
                     {
                         curr_node.alpha = child_alpha;
-                        best_move = min_node;
+                        /* only update best move if we are root node */
+                        if (curr_node.root)
+                        {
+                            best_move = min_node;
+                        }
                     }
                     //curr_node.alpha = Math.Max(curr_node.alpha,
                     //                          alphabeta(min_node, height - 1));
@@ -83,7 +89,8 @@ namespace Restart
                     max_node = new Game.Node(curr_node.state.AIPlayer,
                                                         child_state,
                                                         curr_node.alpha,
-                                                        curr_node.beta);
+                                                        curr_node.beta,
+                                                        false);
 
                     /* set new alpha value for this node */
                     curr_node.beta = Math.Min(curr_node.beta,

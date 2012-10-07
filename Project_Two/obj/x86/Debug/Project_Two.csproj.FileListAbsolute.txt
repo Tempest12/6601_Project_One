@@ -17,3 +17,16 @@ C:\Users\spikey\Documents\Visual Studio 2010\Projects\Project_Two\Project_Two\ob
 C:\Users\spikey\Documents\Visual Studio 2010\Projects\Project_Two\Project_Two\bin\Debug\OpenTK.Compatibility.dll
 C:\Users\spikey\Documents\Visual Studio 2010\Projects\Project_Two\Project_Two\bin\Debug\OpenTK.dll
 C:\Users\spikey\Documents\Visual Studio 2010\Projects\Project_Two\Project_Two\bin\Debug\OpenTK.GLControl.dll
+C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\bin\Debug\Restart.exe.config
+C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Interop.DXTRANSLib.dll
+C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Project_Two.csproj.ResolveComReference.cache
+C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Restart.exe
+C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Restart.pdb
+C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\bin\Debug\Restart.exe
+C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\bin\Debug\Restart.pdb
+C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\bin\Debug\OpenTK.Compatibility.dll
+C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\bin\Debug\OpenTK.dll
+C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\bin\Debug\OpenTK.GLControl.dll
+C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Project_Two.csprojResolveAssemblyReference.cache
+C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Restart.Properties.Resources.resources
+C:\Users\Juan\Documents\GitHub\6601_Project_One\Project_Two\obj\x86\Debug\Project_Two.csproj.GenerateResource.Cache

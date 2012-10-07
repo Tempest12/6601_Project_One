@@ -13,12 +13,13 @@ namespace Restart
         public class Node
         {
             /* Constructor */
-            public Node(Player p, State s, int alpha_in, int beta_in)
+            public Node(Player p, State s, int alpha_in, int beta_in, bool root_in)
             {
                 player = p;
                 state = s;
                 alpha = alpha_in;
                 beta = beta_in;
+                root = root_in;
             }
 
 
@@ -33,6 +34,8 @@ namespace Restart
 
             /* beta value for node */
             public int beta { get; set; }
+
+            public bool root { get; set; }
         }
 
         /*

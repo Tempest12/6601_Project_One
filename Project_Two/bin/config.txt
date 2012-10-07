@@ -15,7 +15,7 @@ section ai
 	#alpha_beta
 	#random
 	
-	player_one alpha_beta
+	player_one random
 	player_two alpha_beta
 	
 	alphabeta_eval_one stayAlive
@@ -63,7 +63,7 @@ section game
 	starting_player 1
 	
 	simulating yes
-	sim_count 5
+	sim_count 10
 }	
 	
 section colours

@@ -269,7 +269,7 @@ namespace Restart
          * Updates the current state of the Program
          */
         public static int counter = 0;
-        public static int maxCount = 750;
+        public static int maxCount = 0;
 
         public static void update()
         {
