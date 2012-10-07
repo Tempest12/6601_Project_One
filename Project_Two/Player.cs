@@ -94,11 +94,11 @@ namespace Restart
                 switch(playerNumber)
                 {
                     case 1:
-                        return AlphaBeta.maxNextMove(currentState, Config.convertSettingToInt("ai", "player_one_depth"));
+                        return AlphaBeta.maxNextMoveAB(currentState, Config.convertSettingToInt("ai", "player_one_depth"));
                         break;
 
                     case 2:
-                        return AlphaBeta.maxNextMove(currentState, Config.convertSettingToInt("ai", "player_two_depth"));
+                        return AlphaBeta.maxNextMoveAB(currentState, Config.convertSettingToInt("ai", "player_two_depth"));
                         break;
 
                     default:
