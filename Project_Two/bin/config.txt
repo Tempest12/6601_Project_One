@@ -15,14 +15,14 @@ section ai
 	#alpha_beta
 	#random
 	
-	player_one random
-	player_two alpha_beta
+	player_one alpha_beta
+	player_two random
 	
-	player_one_depth 30
+	player_one_depth 26
 	player_two_depth 26
 	
-	player_one_time 10.0
-	player_two_time 5.0
+	player_one_time 1000.0
+	player_two_time 1000.0
 	
 	alphabeta_eval_one stayAlive
 	alphabeta_eval_two stayAlive
@@ -56,7 +56,7 @@ section window
 section game
 {
 	#Use five for testing
-	cube_dimension 4
+	cube_dimension 2
 	#use 3.0 for testing
 	cube_size 3.0
 	

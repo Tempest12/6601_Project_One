@@ -157,8 +157,8 @@ namespace Restart
             /* Create initial node */
             Game.Node max_init = new Game.Node(currState.AIPlayer,
                                                 currState,
-                                                int.MinValue,
-                                                int.MaxValue,
+                                                float.MinValue,
+                                                float.MaxValue,
                                                 true);
 
 
