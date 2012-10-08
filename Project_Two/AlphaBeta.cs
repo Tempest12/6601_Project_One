@@ -172,7 +172,7 @@ namespace Restart
                 /* increase plys level - plys = height/2 */
                 height += 2;
             }
-
+            
             /* turn timer off */
             timer.Enabled = false;
 
@@ -206,13 +206,14 @@ namespace Restart
             if (!timerOn)
                 return 0;
 
+            /* Check if current node.state is a terminal state */
             if (curr_node.state.isTerminal())
             {
                 return curr_node.state.value;
             }
 
-            /* base case - check if we have reached desired depth or if
-             * current node.state is a terminal state */
+            /* base case - check if we have reached desired depth or if */
+            
             if (height <= 0 && curr_node.state.isMax())
             {
                 height_reached = true;
@@ -247,11 +248,14 @@ namespace Restart
                         if (curr_node.root)
                         {
                             /* check against older moves that were also good */
-                            if (best_move_value.Item2 <= child_alpha)
-                            {
+                            //Console.WriteLine("value: " + best_move_value.Item2);
+                            //if (best_move_value.Item2 <= child_alpha)
+                            //{
                                 best_move_value = new Tuple<Game.Node, float>(min_node, child_alpha);
-                                //Console.WriteLine("value: " + best_move_value.Item2);
-                            }
+                                //Console.WriteLine("------------------");
+                                //Console.WriteLine("--->value: " + best_move_value.Item2);
+                                //Console.WriteLine("------------------");
+                            //}
                         }
                     }
                     //curr_node.alpha = Math.Max(curr_node.alpha,

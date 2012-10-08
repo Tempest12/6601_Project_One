@@ -95,10 +95,12 @@ namespace Restart
                 {
                     case 1:
                         return AlphaBeta.maxNextMoveID(currentState, Config.convertSettingToFloat("ai", "player_one_time"));
+                        //return AlphaBeta.maxNextMoveAB(currentState, Config.convertSettingToInt("ai", "player_one_depth"));
                         break;
 
                     case 2:
                         return AlphaBeta.maxNextMoveID(currentState, Config.convertSettingToFloat("ai", "player_two_time"));
+                        //return AlphaBeta.maxNextMoveAB(currentState, Config.convertSettingToInt("ai", "player_two_depth"));
                         break;
 
                     default:

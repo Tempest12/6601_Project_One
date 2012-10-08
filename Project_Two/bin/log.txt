@@ -1,0 +1,15 @@
+10/8/2012 1:33:50 AM Log Opened.
+10/8/2012 1:34:23 AM INFO    : Game has ended Player: 1 has won.
+10/8/2012 1:34:53 AM INFO    : Game has ended Player: 2 has won.
+10/8/2012 1:35:13 AM INFO    : Game has ended Player: 2 has won.
+10/8/2012 1:35:24 AM INFO    : Game has ended Player: 2 has won.
+10/8/2012 1:35:36 AM INFO    : Game has ended Player: 2 has won.
+10/8/2012 1:36:00 AM INFO    : Game has ended Player: 2 has won.
+10/8/2012 1:36:27 AM INFO    : Game has ended Player: 1 has won.
+10/8/2012 1:37:04 AM INFO    : Game has ended Player: 2 has won.
+10/8/2012 1:37:26 AM INFO    : Game has ended Player: 2 has won.
+10/8/2012 1:37:59 AM INFO    : Game has ended Player: 2 has won.
+10/8/2012 1:37:59 AM INFO    : Final Results:
+10/8/2012 1:37:59 AM INFO    : Player One: 2 victories.
+10/8/2012 1:37:59 AM INFO    : Player Two: 8 victories.
+10/8/2012 1:37:59 AM Log Closed.
