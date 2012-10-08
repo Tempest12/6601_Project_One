@@ -5,9 +5,11 @@ using System.Text;
 
 namespace Restart
 {
+    public delegate float evalFunc(State state);
+
     public class State
     {
-        public int value;
+        public float value;
         public State highestParent;
 
         public byte[, ,] gameBoard;
@@ -18,8 +20,44 @@ namespace Restart
         public Player AIPlayer;
         public Player opponent;
 
-        //public static delegate evaluateOne;
-        //public static delegate evaluateTwo;
+        private static evalFunc playerOneEvalFunc;
+        private static evalFunc playerTwoEvalFunc;
+
+        public static void setEvalFunc()
+        {
+            string nameOne = Config.getValue("ai", "alphabeta_eval_one");
+            string nameTwo = Config.getValue("ai", "alphabeta_eval_two");
+
+            //Set One
+            if(nameOne.Equals("stayAlive"))
+            {
+                playerOneEvalFunc += stayAlive;
+            }
+            else if (nameOne.Equals("ratio"))
+            {
+                playerOneEvalFunc += ratio;
+            }
+            else
+            {
+                MainMethod.die("State.setEvalFunc : Function named: \"" + nameOne + "\" not recognized for player One.");
+            }
+
+            //Set Two
+           if(nameTwo.Equals("stayAlive"))
+            {
+                playerTwoEvalFunc += stayAlive;
+            }
+           else if (nameTwo.Equals("ratio"))
+           {
+               playerTwoEvalFunc += ratio;
+           }
+            else
+            {
+                MainMethod.die("State.setEvalFunc : Function named: \"" + nameOne + "\" not recognized for player One.");
+            }
+            
+        }
+
 
         //For now to start the "tree" pass in the player's last move and our as false. Then it will generate the first level of all possible AI moves
         public State(Player ai, Player opponent, byte[, ,] board, Move move, bool ourMove)
@@ -61,8 +99,16 @@ namespace Restart
                 this.AIPlayer.getNewMoves(this.gameBoard);
             }
 
-            value = this.evaluate();
+            switch (AIPlayer.playerNumber)
+            {
+                case 1:
+                    this.value = playerOneEvalFunc(this);
+                    break;
 
+                case 2:
+                    this.value = playerTwoEvalFunc(this);
+                    break;
+            }
         }
 
         public bool isMax()
@@ -70,32 +116,45 @@ namespace Restart
             return ourMove;
         }
 
-        public int evaluate()
+        public static float juan(State state)
         {
-            if (ourMove)
+            return 7;
+        }
+
+        public static float ratio(State state)
+        {
+            if (state.opponent.possibleMoves.Count == 0)
             {
-                if (isTerminal())
+                return float.MaxValue;
+            }
+
+            return (float)state.AIPlayer.possibleMoves.Count / (float)state.opponent.possibleMoves.Count;
+        }
+
+        public static float stayAlive(State state)
+        {
+            if (state.ourMove)
+            {
+                if (state.isTerminal())
                 {
                     return int.MinValue;
                 }
                 else
                 {
-                    return AIPlayer.possibleMoves.Count;
+                    return state.AIPlayer.possibleMoves.Count;
                 }
             }
             else
             {
-                if (isTerminal())
+                if (state.isTerminal())
                 {
                     return int.MaxValue;
                 }
                 else
                 {
-                    return AIPlayer.possibleMoves.Count;
+                    return state.AIPlayer.possibleMoves.Count;
                 }
             }
-
-            //return AIPlayer.possibleMoves.Count;
         } 
 
         public List<State> generateChildren()

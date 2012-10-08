@@ -41,7 +41,7 @@ namespace Restart
          * @param:
          * @return: alpha or beta value
          */
-        public static int alphabeta(Game.Node curr_node, int height)
+        public static float alphabeta(Game.Node curr_node, int height)
         {
             /* base case - check if we have reached desired depth or if
              * current node.state is a terminal state */
@@ -64,7 +64,7 @@ namespace Restart
                                                         curr_node.beta,
                                                         false);
                     /* get child's alpha value */
-                    int child_alpha = alphabeta(min_node, height - 1);
+                    float child_alpha = alphabeta(min_node, height - 1);
 
                     /* set new alpha value for this node - 
                      * the less than or equal ensures that when AI
@@ -193,7 +193,7 @@ namespace Restart
          * @param:
          * @return: alpha or beta value
          */
-        public static int alphabetaID(Game.Node curr_node, int height)
+        public static float alphabetaID(Game.Node curr_node, int height)
         {
             /* TIMER has gone off... break ALL recursion! 
              * Note: There is a case where AI does not find a state, in which case
@@ -229,7 +229,7 @@ namespace Restart
                                                         curr_node.beta,
                                                         false);
                     /* get child's alpha value */
-                    int child_alpha = alphabetaID(min_node, height - 1);
+                    float child_alpha = alphabetaID(min_node, height - 1);
 
                     /* set new alpha value for this node - 
                      * the less than or equal ensures that when AI

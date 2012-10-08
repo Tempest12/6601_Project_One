@@ -86,6 +86,8 @@ namespace Restart
             simulating = Config.convertSettingToBool("game", "simulating");
             simCount = 0;
             simCountMax = Config.convertSettingToInt("game", "sim_count");
+
+            State.setEvalFunc();
         }
 
         /**

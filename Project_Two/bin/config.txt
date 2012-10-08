@@ -15,14 +15,14 @@ section ai
 	#alpha_beta
 	#random
 	
-	player_one alpha_beta
+	player_one random
 	player_two alpha_beta
 	
-	player_one_depth 5
-	player_two_depth 15
+	#player_one_depth 5
+	#player_two_depth 5
 	
 	player_one_time 7.0
-	player_two_time 7.0
+	player_two_time 20.0
 	
 	alphabeta_eval_one stayAlive
 	alphabeta_eval_two stayAlive
@@ -56,7 +56,7 @@ section window
 section game
 {
 	#Use five for testing
-	cube_dimension 3
+	cube_dimension 4
 	#use 3.0 for testing
 	cube_size 3.0
 	
@@ -69,7 +69,7 @@ section game
 	starting_player 1
 	
 	simulating yes
-	sim_count 100
+	sim_count 10
 }	
 	
 section colours
@@ -77,12 +77,12 @@ section colours
 
 	#Player One's Colour values
 	playerOne_R 0.05
-	playerOne_G 0.9
+	playerOne_G 0.85
 	playerOne_B 0.1
 	playerOne_A 1.0
 	
 	#Player Two's Colour values
-	playerTwo_R 0.1
+	playerTwo_R 0.0
 	playerTwo_G 0.1
 	playerTwo_B 0.85
 	playerTwo_A 1.0
