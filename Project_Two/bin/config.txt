@@ -56,7 +56,7 @@ section window
 section game
 {
 	#Use five for testing
-	cube_dimension 3
+	cube_dimension 4
 	#use 3.0 for testing
 	cube_size 3.0
 	

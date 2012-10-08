@@ -10,7 +10,7 @@ namespace Restart
     {
         /* Best action found thus far for Max */
         public static Game.Node best_move;
-        public static Tuple<Game.Node,float> best_move_value = new Tuple<Game.Node,float>(null,Int32.MinValue);
+        public static Tuple<Game.Node,float> best_move_value = new Tuple<Game.Node,float>(null,float.MinValue);
 
         /*
          * ----------------------------------------------------------------------------
@@ -163,13 +163,13 @@ namespace Restart
 
 
             /* reset best move */
-            best_move_value = new Tuple<Game.Node, float>(null, Int32.MinValue);
+            best_move_value = new Tuple<Game.Node, float>(null, float.MinValue);
 
             /* Loop executes until timer expires */
             while (timerOn && height_reached)
             //while (timerOn)
             {
-                Console.WriteLine(height);
+                //Console.WriteLine(height);
                 /* keep track of AB reaching the allowed height */
                 height_reached = false;
 
@@ -263,7 +263,7 @@ namespace Restart
                                 timerOn = false;
 
                                 /* we return from the root node since we found a path to win */
-                                return Int32.MaxValue;   
+                                return float.MaxValue;   
                             }
                         }
                     }
