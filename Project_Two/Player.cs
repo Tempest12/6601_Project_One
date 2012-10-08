@@ -85,12 +85,12 @@ namespace Restart
 
         private Move alphaBeta(State currentState)
         {
-            if (currentPosition == null)
+            /*if (currentPosition == null)
             {
                 return pickRandomMove(currentState);
             }
-            else
-            {
+            else*/
+            //{
                 switch(playerNumber)
                 {
                     case 1:
@@ -105,7 +105,7 @@ namespace Restart
                         MainMethod.die("Player.alphaBeta : player number is not 1 or 2. It is: " + playerNumber);
                         break;
                 }
-            }
+            //}
 
             return null;
         }

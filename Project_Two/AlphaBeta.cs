@@ -10,6 +10,7 @@ namespace Restart
     {
         /* Best action found thus far for Max */
         public static Game.Node best_move;
+        public static Tuple<Game.Node,float> best_move_value = new Tuple<Game.Node,float>(null,Int32.MinValue);
 
         /*
          * ----------------------------------------------------------------------------
@@ -156,6 +157,9 @@ namespace Restart
                                                 true);
 
 
+            /* reset best move */
+            best_move_value = new Tuple<Game.Node, float>(null, Int32.MinValue);
+
             /* Loop executes until timer expires */
             while (timerOn && height_reached)
             {
@@ -178,7 +182,7 @@ namespace Restart
             /* this line will break of there was not enough time to find a state,
              * which should not happen given the speed of AI
              */
-            return best_move.state.generatorMove;
+            return best_move_value.Item1.state.generatorMove;
         }
 
         private static void TimerExpiredEvent(object source, ElapsedEventArgs e)
@@ -242,7 +246,12 @@ namespace Restart
                         /* only update best move if we are root node */
                         if (curr_node.root)
                         {
-                            best_move = min_node;
+                            /* check against older moves that were also good */
+                            if (best_move_value.Item2 <= child_alpha)
+                            {
+                                best_move_value = new Tuple<Game.Node, float>(min_node, child_alpha);
+                                //Console.WriteLine("value: " + best_move_value.Item2);
+                            }
                         }
                     }
                     //curr_node.alpha = Math.Max(curr_node.alpha,

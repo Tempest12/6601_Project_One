@@ -21,8 +21,8 @@ section ai
 	#player_one_depth 5
 	#player_two_depth 5
 	
-	player_one_time 7.0
-	player_two_time 20.0
+	player_one_time 10.0
+	player_two_time 10.0
 	
 	alphabeta_eval_one stayAlive
 	alphabeta_eval_two stayAlive
@@ -56,7 +56,7 @@ section window
 section game
 {
 	#Use five for testing
-	cube_dimension 4
+	cube_dimension 3
 	#use 3.0 for testing
 	cube_size 3.0
 	
