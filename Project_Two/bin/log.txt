@@ -1,55 +1,9 @@
-10/8/2012 3:58:23 AM Log Opened.
-10/8/2012 3:58:24 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:24 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:24 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:24 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:24 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:25 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:25 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:25 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:25 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:25 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:25 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:25 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:25 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:25 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:26 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:26 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:26 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:26 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:26 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:26 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:26 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:26 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:27 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:27 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:27 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:27 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:27 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:27 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:27 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:27 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:28 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:28 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:28 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:28 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:28 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:28 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:28 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:28 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:29 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:29 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:29 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:29 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:29 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:29 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:29 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:29 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:29 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:30 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:30 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:30 AM INFO    : Game has ended Player: 2 has won.
-10/8/2012 3:58:30 AM INFO    : Final Results:
-10/8/2012 3:58:30 AM INFO    : Player One: 0 victories.
-10/8/2012 3:58:30 AM INFO    : Player Two: 50 victories.
-10/8/2012 3:58:30 AM Log Closed.
+10/8/2012 2:23:52 PM Log Opened.
+10/8/2012 2:23:59 PM INFO    : Game has ended Player: 2 has won.
+10/8/2012 2:24:05 PM INFO    : Game has ended Player: 2 has won.
+10/8/2012 2:24:12 PM INFO    : Game has ended Player: 2 has won.
+10/8/2012 2:24:23 PM INFO    : Game has ended Player: 2 has won.
+10/8/2012 2:24:33 PM INFO    : Game has ended Player: 2 has won.
+10/8/2012 2:24:40 PM INFO    : Game has ended Player: 2 has won.
+10/8/2012 2:24:48 PM INFO    : Game has ended Player: 2 has won.
+10/8/2012 2:24:53 PM Log Closed.

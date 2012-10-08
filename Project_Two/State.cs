@@ -29,13 +29,25 @@ namespace Restart
             string nameTwo = Config.getValue("ai", "alphabeta_eval_two");
 
             //Set One
-            if(nameOne.Equals("stayAlive"))
+            if(nameOne.Equals("evade"))
             {
-                playerOneEvalFunc += stayAlive;
+                playerOneEvalFunc += evade;
+            }
+            else if (nameOne.Equals("attack"))
+            {
+                playerOneEvalFunc += attack;
             }
             else if (nameOne.Equals("ratio"))
             {
                 playerOneEvalFunc += ratio;
+            }
+            else if (nameOne.Equals("mixed"))
+            {
+                playerOneEvalFunc += mixed;
+            }
+            else if (nameOne.Equals("mixed_over_time"))
+            {
+                playerOneEvalFunc += mixedOverTime;
             }
             else
             {
@@ -43,14 +55,26 @@ namespace Restart
             }
 
             //Set Two
-           if(nameTwo.Equals("stayAlive"))
+            if (nameTwo.Equals("evade"))
             {
-                playerTwoEvalFunc += stayAlive;
+                playerTwoEvalFunc += evade;
             }
-           else if (nameTwo.Equals("ratio"))
-           {
-               playerTwoEvalFunc += ratio;
-           }
+            else if (nameTwo.Equals("attack"))
+            {
+                playerTwoEvalFunc += attack;
+            }
+            else if (nameTwo.Equals("ratio"))
+            {
+                playerTwoEvalFunc += ratio;
+            }
+            else if (nameTwo.Equals("mixed"))
+            {
+                playerTwoEvalFunc += mixed;
+            }
+            else if (nameTwo.Equals("mixed_over_time"))
+            {
+                playerTwoEvalFunc += mixedOverTime;
+            }
             else
             {
                 MainMethod.die("State.setEvalFunc : Function named: \"" + nameOne + "\" not recognized for player One.");
@@ -116,9 +140,29 @@ namespace Restart
             return ourMove;
         }
 
-        public static float juan(State state)
+        public static float mixed(State state)
+        {
+            if (state.opponent.possibleMoves.Count == 0)
+            {
+                return float.MaxValue;
+            }
+
+            return (float)(state.AIPlayer.possibleMoves.Count - state.opponent.possibleMoves.Count) / (float)(state.AIPlayer.possibleMoves.Count + state.opponent.possibleMoves.Count);
+        }
+
+        public static float mixedOverTime(State state)
         {
             return 7;
+        }
+
+        public static float attack(State state)
+        {
+            if (state.opponent.possibleMoves.Count == 0)
+            {
+                return float.MaxValue;
+            }
+
+            return 1.0f / state.opponent.possibleMoves.Count;
         }
 
         public static float ratio(State state)
@@ -131,7 +175,7 @@ namespace Restart
             return (float)state.AIPlayer.possibleMoves.Count / (float)state.opponent.possibleMoves.Count;
         }
 
-        public static float stayAlive(State state)
+        public static float evade(State state)
         {
             if (state.ourMove)
             {

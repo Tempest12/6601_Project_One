@@ -24,8 +24,16 @@ section ai
 	player_one_time 5.0
 	player_two_time 5.0
 	
-	alphabeta_eval_one stayAlive
-	alphabeta_eval_two stayAlive
+	#Current Options are:
+	
+	#1. Evade
+	#2. Attack
+	#3. Ratio
+	#4. Mixed
+	#5. MixedOverTime
+	
+	alphabeta_eval_one evade
+	alphabeta_eval_two attack
 }
 
 section log
@@ -56,7 +64,7 @@ section window
 section game
 {
 	#Use five for testing
-	cube_dimension 4
+	cube_dimension 3
 	#use 3.0 for testing
 	cube_size 3.0
 	

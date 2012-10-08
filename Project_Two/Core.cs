@@ -163,11 +163,7 @@ namespace Restart
 
         public static void switchPlayers()
         {
-            if (done)
-            {
-                return;
-            }
-
+            moveCounter++;
 
             if(currentPlayer.Equals(playerOne))
             {
