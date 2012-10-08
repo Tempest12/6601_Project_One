@@ -137,7 +137,7 @@ namespace Restart
             {
                 if (state.isTerminal())
                 {
-                    return int.MinValue;
+                    return float.MinValue;
                 }
                 else
                 {
@@ -148,7 +148,7 @@ namespace Restart
             {
                 if (state.isTerminal())
                 {
-                    return int.MaxValue;
+                    return float.MaxValue;
                 }
                 else
                 {

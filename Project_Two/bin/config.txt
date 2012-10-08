@@ -19,10 +19,10 @@ section ai
 	player_two alpha_beta
 	
 	player_one_depth 30
-	player_two_depth 30
+	player_two_depth 26
 	
-	player_one_time 30.0
-	player_two_time 20.0
+	player_one_time 10.0
+	player_two_time 5.0
 	
 	alphabeta_eval_one stayAlive
 	alphabeta_eval_two stayAlive

@@ -44,9 +44,14 @@ namespace Restart
          */
         public static float alphabeta(Game.Node curr_node, int height)
         {
+            if (curr_node.state.isTerminal())
+            {
+                return curr_node.state.value;
+            }
+
             /* base case - check if we have reached desired depth or if
              * current node.state is a terminal state */
-            if ((height <= 0 && curr_node.state.isMax()) || (curr_node.state.isTerminal()))
+            if (height <= 0 && curr_node.state.isMax())
             {
                 return curr_node.state.value;
             }
@@ -162,7 +167,9 @@ namespace Restart
 
             /* Loop executes until timer expires */
             while (timerOn && height_reached)
+            //while (timerOn)
             {
+                Console.WriteLine(height);
                 /* keep track of AB reaching the allowed height */
                 height_reached = false;
 
@@ -170,7 +177,7 @@ namespace Restart
                 alphabetaID(max_init, height);
 
                 /* increase plys level - plys = height/2 */
-                height += 2;
+                height = height * 2;
             }
             
             /* turn timer off */
@@ -247,15 +254,17 @@ namespace Restart
                         /* only update best move if we are root node */
                         if (curr_node.root)
                         {
-                            /* check against older moves that were also good */
-                            //Console.WriteLine("value: " + best_move_value.Item2);
-                            //if (best_move_value.Item2 <= child_alpha)
-                            //{
-                                best_move_value = new Tuple<Game.Node, float>(min_node, child_alpha);
-                                //Console.WriteLine("------------------");
-                                //Console.WriteLine("--->value: " + best_move_value.Item2);
-                                //Console.WriteLine("------------------");
-                            //}
+                            best_move_value = new Tuple<Game.Node, float>(min_node, child_alpha);
+
+                            /* check if this move is a win */
+                            if (child_alpha == float.MaxValue)
+                            {
+                                /* Simulate timer went off to exit ID loop */
+                                timerOn = false;
+
+                                /* we return from the root node since we found a path to win */
+                                return Int32.MaxValue;   
+                            }
                         }
                     }
                     //curr_node.alpha = Math.Max(curr_node.alpha,
